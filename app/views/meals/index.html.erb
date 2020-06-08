@@ -1,2 +1,17 @@
-<h1>Meals#index</h1>
-<p>Find me in app/views/meals/index.html.erb</p>
+<div class="container">
+  <h3>Meals</h3>
+  <div class="row">
+    <% @meals.each do |meal| %>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h3><%= meal.title %></h3>
+            <p><%= meal.description %></p>
+            <p><%= meal.rating %></p>
+            <p><%= meal.capacity %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
