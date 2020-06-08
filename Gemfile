@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 # devise -- gem to add users to project
 gem 'devise'
 
+# pundit -- gem to moderate feature access control
+gem 'pundit'
+
 # simple_form
 gem 'simple_form'
 
