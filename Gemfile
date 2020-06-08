@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # simple_form
 gem 'simple_form'
 
+# font-awesome stuff
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
