@@ -18,15 +18,30 @@ class MealsController < ApplicationController
   end
 
   def show
+    @meal = Meal.find(params[:id])
   end
 
   def edit
+    @meal = Meal.find(params[:id])
   end
 
   def update
+    @meal = Meal.find(params[:id])
+    @meal.user = current_user
+    if @meal.update(meal_params)
+      redirect_to meals_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @meal = Meal.find(params[:id])
+    if @meal.destroy
+      redirect_to meals_path
+    else
+      redirect_to meals_path
+    end
   end
 
   private
