@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :meals do
     resources :reviews, only: %i(index new create)
   end
+  resources :reviews, only: %i[destroy]
 end

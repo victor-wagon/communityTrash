@@ -31,11 +31,21 @@
   <% @meal.reviews.each do |review| %>
     <div class="col-sm-4">
       <div class="card position-relative">
-        <div class="card-body">
+        <div class="card-body pb-0">
           <h5 class="text-center"><%= review.title %></h5>
-          <hr>
+          <hr class="">
+          <div class="d-flex justify-content-center mb-3">
+            <% review.rating.times do %>
+              <i class="fas fa-star mx-1 text-warning"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star mx-1"></i>
+            <% end %>
+          </div>
         </div>
-        <div class="position-absolute"></div>
+        <%= link_to review_path(review), method: :delete, class: "close_cross" do %>
+          <i class="fas fa-times-circle"></i>
+        <% end %>
       </div>
     </div>
   <% end %>

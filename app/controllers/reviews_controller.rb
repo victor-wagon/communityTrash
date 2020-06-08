@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_meal, only: %i[new create]
+  before_action :set_review, only: %i[destroy]
 
   def index
   end
@@ -19,6 +20,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    if @review.destroy
+      redirect_to meal_path(@review.meal)
+    end
   end
 
   private
@@ -29,6 +33,10 @@ class ReviewsController < ApplicationController
 
   def set_meal
     @meal = Meal.find(params[:meal_id])
+  end
+
+  def set_review
+    @review = Review.find(params[:id])
   end
 
 end
