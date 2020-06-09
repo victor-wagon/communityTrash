@@ -2,8 +2,15 @@
   <div>
     <%= link_to "CommunEATy", root_path, class: "navbar-brand" %>
   </div>
-  <div>
+  <div class="d-flex">
     <% if user_signed_in? %>
+      <div class="mx-1">
+        <button type="text" class="btn btn-secondary btn-outline" disabled=""><%= current_user.email%>
+          <% if current_user.admin %>
+            <span class="badge badge-success">A</span>
+          <% end %>
+        </button>
+      </div>
       <%= link_to "Logout", destroy_user_session_path, method: :delete , class: "btn btn-secondary btn-outline" %>
     <% else %>
       <%= link_to "Login", new_user_session_path , class: "btn btn-success" %>
