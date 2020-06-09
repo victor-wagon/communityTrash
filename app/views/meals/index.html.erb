@@ -4,7 +4,7 @@
     <% @meals.each do |meal| %>
       <div class="col-md-3">
         <div class="card" >
-          <div class="card-body text-white" style="<% if meal.photo.attached? %>background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path meal.photo.key, crop: :fit %>'); transform: rotate(0);<% end %>">
+          <div class="card-body text-white" style="<% if meal.photo.attached? %>background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path meal.photo.key, crop: :fit %>');<% end %> transform: rotate(0);">
             <div class="text-center">
               <h3><%= meal.title %></h3>
               <p><%= meal.description %></p>
