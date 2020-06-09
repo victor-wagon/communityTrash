@@ -15,14 +15,16 @@
             </div>
             <a href="<%= meal_path(meal) %>" class="stretched-link"></a>
           </div>
-          <div class="card-footer d-flex justify-content-between align-items-center">
-            <div>
-              <%= link_to "edit", edit_meal_path(meal) %>
+          <% if policy(meal).edit? && policy(meal).destroy? %>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div>
+                <%= link_to "edit", edit_meal_path(meal) %>
+              </div>
+              <div>
+                <%= link_to "destroy", meal_path(meal), method: :delete, data:{confirm: "Are you Sure?"} %>
+              </div>
             </div>
-            <div>
-              <%= link_to "destroy", meal_path(meal), method: :delete, data:{confirm: "Are you Sure?"} %>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     <% end %>

@@ -9,6 +9,10 @@ class MealPolicy < ApplicationPolicy
     return true
   end
 
+  def show?
+    return true
+  end
+
   def update?
     am_i_the_right_user_or_an_admin?
   end

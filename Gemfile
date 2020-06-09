@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # devise -- gem to add users to project
 gem 'devise'
-
+# hide your cloudinary secret keys on github
+gem 'dotenv-rails', groups: [:development, :test]
 # pundit -- gem to moderate feature access control
 gem 'pundit'
 
