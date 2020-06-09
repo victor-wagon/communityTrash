@@ -31,6 +31,8 @@ gem 'pundit'
 # simple_form
 gem 'simple_form'
 
+# adding cloudinary
+gem 'cloudinary'
 # font-awesome stuff
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
